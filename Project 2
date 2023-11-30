@@ -1,0 +1,22 @@
+The thought of being able to use a different type of linux was very exciting to me, and after thinking about it for a while, I decided to use CentOS. I knew right off the bat things were gonna be a little different just based off the project description,
+but I kinda like the thought of a challenge. After creating the instance in Google Cloud I got into the terminal and got to work.
+
+The first thing I needed was Apache, so I went back to my notes and the lecture for reference. I found out that because I'm using CentOS, apt doesn't work so I had to do a little bit of research. Looking around for a bit led me to substituting 'apt' for 'yum'.
+Before anything I wanted to update my system so I used this command
+sudo yum update
+I then needed to install apache, but using the notes and lecture provided I found out that with CentOS it's not called apache, but instead 'httpd', so I used this command to install it.
+sudo yum install httpd
+Then I needed to start it
+sudo systemctl start httpd
+'sudo systemctl enable httpd'
+After this I wanted to check and make sure everything was enabled and running ok, so I used these commands
+'systemctl list-unit-files httpd.service' and 'systemctl status httpd'
+It told me everything was up and running so its time to move on.
+I wanted to attempt making a web page so I needed w3m. I used this command to get it
+'sudo yum install w3m'
+and using It i went to my localhost IP adress and saw the apache default webpage for myself (its different in CentOS!!).
+But I wanted to change the contents on the page so using the notes I tried to use the nano command to edit the index.html page, but to my surprise the command wasn't working!
+After freaking out for a bit I did some research and found a different editor called 'vi'. I had to do research to understand what I was doing in it, but I figured it out and was able to get into the index.html file and add my own things.
+After saving and exiting vi, I refreshed the apache web page and it was the web page of my own, everything worked!\
+
+The next thing I needed was PHP
