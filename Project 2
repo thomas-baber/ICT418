@@ -19,4 +19,26 @@ But I wanted to change the contents on the page so using the notes I tried to us
 After freaking out for a bit I did some research and found a different editor called 'vi'. I had to do research to understand what I was doing in it, but I figured it out and was able to get into the index.html file and add my own things.
 After saving and exiting vi, I refreshed the apache web page and it was the web page of my own, everything worked!\
 
-The next thing I needed was PHP
+The next thing I needed was PHP, so I used the command
+'sudo yum install php' and I restarted apache by using 'sudo systemctl restart httpd'
+I then wanted to check and make sure the install was working, so I created an info.php file in the /var/www/html/ directory, edited it with vi, checked it on my browser, and everything worked!
+I then needed to configure and to do that I needed to find the 'dir.conf' file, which took me a minute because it's different on CentOS!
+Instead of the directory in the notes, I went to '/etc/httpd/conf/' which is where I found the 'httpd.conf' file. Using vi I edited the file to put index.php in front of index.html.
+I then needed my index.php file, so I went to the '/var/www/html/' directory and using vi I created an index.php file with the contents from our notes and lecture.
+After saving, I went back to my browser to see if it worked, and it did!
+
+I then needed MariaDB, so I used the command
+'sudo apt install mariadb-server mariadb-client'
+I then followed the notes all the way up to where we needed to log into mariaDB where I ran into a roadblock. CentOS was telling me Mariadb wasn't a command, so after some research I found out I needed to
+use the command 'mysql -u root -p' which then allowed me to go right in.
+After editing and creating tables in the databases, I set up a regular user account just like in the notes.
+I then needed to install mysql, so I used the command
+'sudo yum install php-mysql'
+I then restared apache and MariaDB and continued.
+The only other roadblock I encountered was when I needed to use the command 'sudo chown :www-data login.php', where it told me that ':www-data' was an invalid group.
+After a quick couple searches I found out the syntax is slightly different, so I used 'sudo chown apache:apache login.php' instead and it worked!
+
+The last thing I needed was wordpress itself, but before I did that I needed the php modules for it so I used the command
+'sudo apt install php-curl php-xml php-imagick php-mbstring php-zip php-intl' and restarted apache and MariaDB
+I then just followed the notes down to the end just like I did before, but when I got to the end and tried to test it, I ran into the biggest roadblock of all.
+I refreshed my browser and it tells me my php is out of date, and after everything, I could not get it to work sadly. Everything works but the website itself.
