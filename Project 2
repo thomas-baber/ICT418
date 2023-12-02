@@ -42,3 +42,6 @@ The last thing I needed was wordpress itself, but before I did that I needed the
 'sudo apt install php-curl php-xml php-imagick php-mbstring php-zip php-intl' and restarted apache and MariaDB
 I then just followed the notes down to the end just like I did before, but when I got to the end and tried to test it, I ran into the biggest roadblock of all.
 I refreshed my browser and it tells me my php is out of date, and after everything, I could not get it to work sadly. Everything works but the website itself.
+
+After talking it over with Prof Burns I did it all again using Rocky Linux this time instead and to my surprise everything worked perfectly! Everything was basically the same except instead of using
+'yum' or 'apt' I used 'dnf' with rocky linux.
