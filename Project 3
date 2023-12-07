@@ -1,0 +1,7 @@
+Starting off with project 3, I first did all the introduction stuff and after I felt like I had a handle on the gcloud commands I went into the meat and potatoes of the project.
+With the first task of making the first 3 web server instances, I had a little bit of trouble at first.
+I ran into an issue where it said that I couldn't run a bash command and I assume this is because I'm not on linux.
+So I did everything but the metadata starup script for all 3.
+I still wanted to install the updates and apache 2 for the web server instances so I went into each individual instance and manually installed the updates and apache2 and it worked!
+After this I was able to basically do everything as it says on the instruction page.
+I got to the end and I believe I was successful in creating my load balancer.
